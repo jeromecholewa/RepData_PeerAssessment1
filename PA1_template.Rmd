@@ -149,7 +149,7 @@ stepsPerDayFilled <- aggregate(movedataFilled$steps, by = list(date = movedataFi
 names(stepsPerDayFilled)  <- c("Date", "Steps")
 
 ```
-We can now plot a similar histogram as before with the misssing data filled in:
+We can now plot a similar histogram as before with the missing data filled in:
 ```{r histogramFilled}
 cutpointsFilled  <- quantile (stepsPerDayFilled$Steps, seq(0,1, .1))
 par(mfrow = c(1,1), mar=c(5.1,4.1,4.1,0.4))
@@ -163,7 +163,7 @@ Let's compare the summaries
 summary(stepsPerDay)
 summary(stepsPerDayFilled)
 ```
-It increase by 1 unit the median, the mean is still the same, min and max did not move, but the first and 3rd quartile were changed by that manipulation.
+It increases by 1 unit the median, the mean is still the same, min and max did not move, but the first and 3rd quartile were changed by that manipulation.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -194,3 +194,6 @@ par(xaxt = "s", mar = c(5.1,4.1,0,.4))
 plotStepsInt(stepsPerIntWE, "On weekends")
 title(xlab = "Time (hh:mm)")
 ```
+
+## CONCLUSION
+**As a conclusion, it seems that there are fewer steps on the weekend in the morning, but slightly more steps during the mid-day on the weekends. The peak around 7pm on the weekdays disappears on the weekends. However around 8:30pm there are more steps on the weekends than on the weekdays.**
